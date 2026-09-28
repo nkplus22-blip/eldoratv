@@ -1,764 +1,661 @@
 <!DOCTYPE html>
-<html lang="bs">
+<html lang="bs" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EldoraTV | Najbolja IPTV Usluga - Besplatan Test 24h</title>
-    <meta name="description" content="EldoraTV vam nudi preko 15.000 TV kanala i 60.000+ filmova i serija u 4K i FHD rezoluciji. Zatražite besplatan test od 24h odmah!">
-    
-    <!-- Google Fonts -->
+    <title>EldoraTV | Legalna Globalna TV Platforma & Streaming</title>
+    <meta name="description" content="EldoraTV - 100% legalna globalna TV platforma. Preko 7.200+ kanala i 105.000+ VOD sadržaja uz zvaničnu PDF garanciju i povrat novca.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome Ikone -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            900: '#070A0F',
+                            800: '#0F172A',
+                            700: '#1E293B',
+                            600: '#334155'
+                        },
+                        brand: {
+                            cyan: '#06B6D4',
+                            purple: '#8B5CF6',
+                            gold: '#F59E0B',
+                            emerald: '#10B981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.4)',
+                        'glow-purple': '0 0 25px -5px rgba(139, 92, 246, 0.4)',
+                        'glow-gold': '0 0 25px -5px rgba(245, 158, 11, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(22, 31, 49, 0.7);
-            --primary-accent: #7c3aed;
-            --primary-glow: #a855f7;
-            --secondary-accent: #06b6d4;
-            --gold-accent: #fbbf24;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --whatsapp-green: #25d366;
-            --viber-purple: #7360f2;
-            --border-color: rgba(255, 255, 255, 0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: #070A0F;
+            color: #F8FAFC;
             overflow-x: hidden;
         }
 
-        /* --- BACKGROUND DECORATION --- */
-        .glow-sphere {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            z-index: -1;
-            opacity: 0.35;
-            pointer-events: none;
-        }
-        .glow-1 { top: -100px; left: -100px; width: 450px; height: 450px; background: var(--primary-accent); }
-        .glow-2 { top: 600px; right: -100px; width: 500px; height: 500px; background: var(--secondary-accent); }
-
-        /* --- NAVBAR --- */
-        header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            background: rgba(11, 15, 25, 0.85);
+        /* Glassmorphism Styling */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
+        .glass-card-hover {
+            transition: all 0.3s ease;
         }
 
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
+        .glass-card-hover:hover {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: rgba(6, 182, 212, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.25);
         }
 
-        .logo-box img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-text span {
-            color: var(--primary-glow);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        .nav-btn {
-            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
-            color: #fff !important;
-            padding: 0.6rem 1.3rem;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 5rem 1.5rem 4rem;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .badge-test {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(124, 58, 237, 0.15);
-            border: 1px solid rgba(124, 58, 237, 0.4);
-            color: var(--primary-glow);
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.2rem;
-            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+        /* Gradient Glow Text */
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #38BDF8 0%, #06B6D4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FDE047 0%, #F59E0B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .btn-main {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 0.9rem 2rem;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070A0F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06B6D4;
         }
 
-        .btn-whatsapp {
-            background: var(--whatsapp-green);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        /* Animations */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.6; transform: scale(1); filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.4)); }
+            50% { opacity: 1; transform: scale(1.02); filter: drop-shadow(0 0 35px rgba(6, 182, 212, 0.7)); }
+        }
+        .animate-glow-logo {
+            animation: pulseGlow 4s infinite ease-in-out;
         }
 
-        .btn-whatsapp:hover {
-            background: #20bd5a;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-        }
-
-        .btn-viber {
-            background: var(--viber-purple);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(115, 96, 242, 0.3);
-        }
-
-        .btn-viber:hover {
-            background: #614de0;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(115, 96, 242, 0.5);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            max-width: 1100px;
-            margin: 4rem auto 0;
-            padding: 0 1.5rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.8rem;
-            border-radius: 16px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-card h3 {
-            font-size: 2rem;
-            color: var(--primary-glow);
-            font-weight: 800;
-        }
-
-        .stat-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* --- FEATURES --- */
-        .section-title {
-            text-align: center;
-            margin: 5rem 0 3rem;
-            padding: 0 1.5rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-        }
-
-        .section-title p {
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        .feature-card:hover {
-            border-color: rgba(124, 58, 237, 0.5);
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            width: 55px;
-            height: 55px;
-            background: rgba(124, 58, 237, 0.15);
-            color: var(--primary-glow);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- PRICING --- */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .price-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 2.5rem 1.8rem;
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: 0.3s ease;
-        }
-
-        .price-card.popular {
-            border: 2px solid var(--primary-glow);
-            background: rgba(30, 27, 75, 0.6);
-            transform: scale(1.03);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
-            color: #fff;
-            padding: 0.3rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .price-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 1rem 0;
-        }
-
-        .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .price-features {
-            list-style: none;
-            margin: 1.5rem 0 2rem;
-            text-align: left;
-        }
-
-        .price-features li {
-            padding: 0.5rem 0;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .price-features li i {
-            color: var(--whatsapp-green);
-        }
-
-        /* --- DEVICES --- */
-        .devices-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            text-align: center;
-        }
-
-        .device-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 16px;
-        }
-
-        .device-box i {
-            font-size: 2.2rem;
-            color: var(--secondary-accent);
-            margin-bottom: 0.8rem;
-        }
-
-        .device-box h4 {
-            font-size: 1rem;
-        }
-
-        /* --- CTA BANNER --- */
-        .cta-banner {
-            max-width: 1100px;
-            margin: 6rem auto;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(6, 182, 212, 0.2));
-            border: 1px solid var(--primary-glow);
-            border-radius: 24px;
-            padding: 3.5rem 2rem;
-            text-align: center;
-        }
-
-        .cta-banner h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* --- FAQ --- */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .faq-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            padding: 1.2rem 1.5rem;
-        }
-
-        .faq-item h4 {
-            font-size: 1.05rem;
-            color: #fff;
-            margin-bottom: 0.4rem;
-        }
-
-        .faq-item p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- FLOATING BUTTONS --- */
-        .floating-contact {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 9999;
-        }
-
-        .float-btn {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.6rem;
-            text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            transition: 0.3s transform ease;
-        }
-
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .float-wa { background-color: var(--whatsapp-green); }
-        .float-vb { background-color: var(--viber-purple); }
-
-        /* --- FOOTER --- */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 5rem;
-        }
-
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            nav ul { display: none; }
-            .price-card.popular { transform: none; }
+        .modal-active {
+            overflow: hidden;
         }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-brand-cyan selection:text-black">
 
-    <!-- Pozadinski svjetlosni efekti -->
-    <div class="glow-sphere glow-1"></div>
-    <div class="glow-sphere glow-2"></div>
-
-    <!-- NAVBAR -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo-box">
-                <img src="eldoralogo.PNG" alt="EldoraTV Logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
-                <span id="alt-logo" class="logo-text" style="display:none;">Eldora<span>TV</span></span>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Simple Nav Text Logo -->
+            <a href="#" class="flex flex-col group">
+                <span class="text-xl sm:text-2xl font-black tracking-wider text-white">ELDORA<span class="text-brand-cyan">TV</span></span>
+                <span class="text-[10px] text-slate-400 tracking-widest uppercase -mt-1 font-semibold">Global TV Streaming</span>
             </a>
-            <nav>
-                <ul>
-                    <li><a href="#pocetna">Početna</a></li>
-                    <li><a href="#prednosti">Prednosti</a></li>
-                    <li><a href="#cjenovnik">Cjenovnik</a></li>
-                    <li><a href="#uredjaji">Uređaji</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="https://wa.me/387603247407?text=Zdravo,%20želim%20besplatan%20IPTV%20test%2024h" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> Besplatan Test</a></li>
-                </ul>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#ponuda" class="hover:text-brand-cyan transition-colors">Sadržaj</a>
+                <a href="#garancija" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5 text-brand-gold font-semibold">
+                    <i class="fa-solid fa-shield-halved"></i> PDF Garancija
+                </a>
+                <a href="#uredjaji" class="hover:text-brand-cyan transition-colors">Uređaji</a>
+                <a href="#paketi" class="hover:text-brand-cyan transition-colors">Cjenovnik</a>
+                <a href="#faq" class="hover:text-brand-cyan transition-colors">FAQ</a>
             </nav>
+
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="openModal('testModal')" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-all">
+                    <i class="fa-solid fa-bolt text-brand-gold"></i> Besplatan Test
+                </button>
+                <a href="#paketi" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-extrabold uppercase tracking-wider text-black bg-gradient-to-r from-brand-cyan to-brand-purple hover:opacity-95 shadow-glow-cyan transition-all transform hover:scale-[1.02]">
+                    <i class="fa-solid fa-cart-shopping"></i> Naruči Odmah
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- HERO SEKCIJA -->
-    <section class="hero" id="pocetna">
-        <div class="badge-test">
-            <i class="fa-solid fa-bolt"></i> Besplatan Test Od 24 Sata
-        </div>
-        <h1>Gledajte Omiljene Kanale, Filmove i Serije Bez Prekida</h1>
-        <p>Preko 15.000 TV kanala i 60.000+ VOD filmova i serija u 4K i Full HD kvalitetu. Stabilna usluga prilagođena svim uređajima.</p>
-        
-        <div class="hero-buttons">
-            <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20besplatan%20test%2024h%20za%20EldoraTV" class="btn-main btn-whatsapp" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Testiraj Putem WhatsApp-a
-            </a>
-            <a href="viber://chat?number=%2B387603247407" class="btn-main btn-viber">
-                <i class="fa-brands fa-viber"></i> Testiraj Putem Viber-a
-            </a>
+    <!-- Main Hero Section (SA VELIKIM LOGOTIPOM) -->
+    <section class="relative pt-10 pb-20 md:pt-14 md:pb-32 overflow-hidden">
+        <!-- Ambient Glowing Background Spheres -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/2 right-10 w-[400px] h-[400px] bg-brand-purple/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <!-- ENORMOUS CENTERED LOGO (AS REQUESTED) -->
+            <div class="flex flex-col items-center justify-center w-full mb-12 sm:mb-16">
+                <img src="eldoralogo.PNG" alt="EldoraTV Glavni Logo" class="w-auto h-36 sm:h-52 md:h-64 object-contain animate-glow-logo">
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    
+                    <!-- Meta Compliance Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-slate-700/80 text-xs sm:text-sm font-semibold text-slate-200 shadow-sm mx-auto lg:mx-0">
+                        <span class="flex h-2.5 w-2.5 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-emerald"></span>
+                        </span>
+                        <span class="text-brand-cyan">100% Legalna Platforma:</span> Globalne Usluge Širom Svijeta
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15]">
+                        Globalni TV Kanali & Videoteka <span class="text-gradient-cyan">Bez Prekida</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        EldoraTV je zvanični globalni provajder koji vam pruža pristup preko <strong class="text-white font-semibold">7.200+ kanala</strong> i <strong class="text-white font-semibold">105.000+ naslova u videoteci</strong> (uz redovno ažuriranje). Svaki korisnik dobija garantovan kvalitet usluge.
+                    </p>
+
+                    <!-- Trust Badges Bar -->
+                    <div class="grid grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0">
+                        <div class="glass-card p-3 rounded-xl flex flex-col items-center lg:items-start text-center lg:text-left border-slate-800">
+                            <i class="fa-solid fa-file-pdf text-brand-gold text-xl mb-1"></i>
+                            <span class="text-xs font-bold text-white">PDF Garancija</span>
+                            <span class="text-[10px] text-slate-400">Sa datumom kupovine</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-xl flex flex-col items-center lg:items-start text-center lg:text-left border-slate-800">
+                            <i class="fa-solid fa-shield-check text-brand-emerald text-xl mb-1"></i>
+                            <span class="text-xs font-bold text-white">Povrat Novca</span>
+                            <span class="text-[10px] text-slate-400">100% u cijelosti</span>
+                        </div>
+                        <div class="glass-card p-3 rounded-xl flex flex-col items-center lg:items-start text-center lg:text-left border-slate-800">
+                            <i class="fa-solid fa-globe text-brand-cyan text-xl mb-1"></i>
+                            <span class="text-xs font-bold text-white">Globalni Domet</span>
+                            <span class="text-[10px] text-slate-400">Usluge širom svijeta</span>
+                        </div>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#paketi" class="w-full sm:w-auto px-8 py-4 rounded-xl font-black text-sm uppercase tracking-wider text-black bg-gradient-to-r from-brand-cyan via-brand-cyan to-brand-purple hover:shadow-glow-cyan transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-play text-lg"></i> Izaberi Paket & Započni
+                        </a>
+                        <button onclick="openModal('testModal')" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-sm tracking-wider text-slate-200 glass-card hover:bg-slate-800/80 border-slate-700 transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-bolt text-brand-gold"></i> Testiraj 24h Besplatno
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-slate-400 flex items-center justify-center lg:justify-start gap-2 pt-1">
+                        <i class="fa-solid fa-lock text-brand-emerald"></i> Aktivacija za manje od 5 minuta • Potpuno legalno poslovanje
+                    </p>
+                </div>
+
+                <!-- Hero Right Column (Mockup Visual) -->
+                <div class="lg:col-span-5 hidden lg:block">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="relative rounded-2xl glass-card p-3 border-slate-700/80 shadow-2xl overflow-hidden">
+                            
+                            <div class="flex items-center justify-between px-4 py-2 border-b border-slate-800 mb-3 bg-obsidian-900/60 rounded-xl">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                </div>
+                                <div class="text-[11px] font-mono text-slate-400 flex items-center gap-2">
+                                    <span class="inline-block w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span> EldoraTV Web Player
+                                </div>
+                            </div>
+
+                            <div class="relative rounded-xl overflow-hidden group aspect-video bg-obsidian-900 flex items-center justify-center border border-slate-800">
+                                <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80" alt="EldoraTV Stream" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-transparent to-black/40"></div>
+                                
+                                <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                                    <div>
+                                        <span class="px-2.5 py-1 rounded bg-brand-purple/80 text-[10px] font-extrabold uppercase text-white tracking-wider">PREMIUM KVALITETA</span>
+                                        <h3 class="text-base font-bold text-white mt-1">Najbolji Sportski & Filmski Sadržaj</h3>
+                                        <p class="text-xs text-slate-300">Bez baferovanja širom planete</p>
+                                    </div>
+                                    <div class="w-10 h-10 rounded-full bg-brand-cyan text-black flex items-center justify-center shadow-lg font-bold">
+                                        <i class="fa-solid fa-play ml-0.5"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PDF Certificate Preview Mini-Banner -->
+                            <div class="mt-3 p-3 rounded-xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-brand-gold/30 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xl">
+                                        <i class="fa-solid fa-file-certificate"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-white">PDF Garancija Povrata Novca</p>
+                                        <p class="text-[10px] text-slate-400">Dobijate službeni dokument uz račun</p>
+                                    </div>
+                                </div>
+                                <a href="#garancija" class="text-xs text-brand-gold hover:underline font-semibold flex items-center gap-1">
+                                    Detalji <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- BRZA STATISTIKA -->
-    <div class="stats-grid">
-        <div class="stat-card">
-            <h3>15.000+</h3>
-            <p>Uživo TV Kanala</p>
-        </div>
-        <div class="stat-card">
-            <h3>60.000+</h3>
-            <p>Filmova i Serija</p>
-        </div>
-        <div class="stat-card">
-            <h3>4K / FHD</h3>
-            <p>Vrhunska Slika</p>
-        </div>
-        <div class="stat-card">
-            <h3>99.9%</h3>
-            <p>Stabilnost & Uptime</p>
-        </div>
-    </div>
+    <!-- Stats Banner Section -->
+    <section class="py-10 border-y border-slate-800/80 bg-obsidian-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                
+                <div class="p-4 glass-card rounded-2xl">
+                    <div class="text-2xl sm:text-4xl font-black text-gradient-cyan mb-1">7.200+</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-300">TV Kanala Uživo</p>
+                    <p class="text-[11px] text-slate-500">Premium globalni i lokalni kanali</p>
+                </div>
 
-    <!-- PREDNOSTI -->
-    <section class="features" id="prednosti">
-        <div class="section-title">
-            <h2>Zašto Izabrati EldoraTV?</h2>
-            <p>Osiguravamo vrhunsko iskustvo gledanja uz najsavremeniju tehnologiju.</p>
-        </div>
+                <div class="p-4 glass-card rounded-2xl">
+                    <div class="text-2xl sm:text-4xl font-black text-gradient-purple mb-1">105.000+</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-300">Naslova u Videoteci</p>
+                    <p class="text-[11px] text-slate-500">Redovno ažuriranje videoteke</p>
+                </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Anti-Freeze Tehnologija</h3>
-                <p>Naši serveri omogućavaju gledanje sportskih događaja i kanala uživo bez seckanja i baferovanja.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-tv"></i></div>
-                <h3>EX-YU & Svjetski Kanali</h3>
-                <p>Svi sportski (Arena, SportKlub), filmski, dokumentarni i dječiji kanali na jednom mjestu.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-film"></i></div>
-                <h3>Bogata VOD Biblioteka</h3>
-                <p>Najnoviji holivudski i domaći filmovi i serije sa prevodom, redovno ažurirani.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
-                <h3>Korisnička Podrška 24/7</h3>
-                <p>Brza pomoć pri podešavanju i instalaciji aplikacija na vaše uređaje u bilo koje doba dana.</p>
+                <div class="p-4 glass-card rounded-2xl">
+                    <div class="text-2xl sm:text-4xl font-black text-gradient-gold mb-1">100%</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-300">Povrat Novca</p>
+                    <p class="text-[11px] text-slate-500">Ukoliko budete nezadovoljni</p>
+                </div>
+
+                <div class="p-4 glass-card rounded-2xl">
+                    <div class="text-2xl sm:text-4xl font-black text-emerald-400 mb-1">24/7</div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-300">Stručna Podrška</p>
+                    <p class="text-[11px] text-slate-500">Uvijek dostupni za korisnike</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- PODRŽANI UREĐAJI -->
-    <section id="uredjaji">
-        <div class="section-title">
-            <h2>Gledajte Na Svim Uređajima</h2>
-            <p>EldoraTV je kompatibilna sa svim popularnim platformama.</p>
-        </div>
+    <!-- PDF Guarantee Section (OVDJE JE PRECIZNO IMPLEMENTIRAN TVOJ ZAHTJEV) -->
+    <section id="garancija" class="py-24 relative bg-slate-900/40 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Guarantee Visual Card Mockup -->
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="relative p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-obsidian-800 to-slate-900 border-2 border-brand-gold/40 shadow-glow-gold hover:shadow-[0_0_40px_-5px_rgba(245,158,11,0.4)] transition-shadow duration-500">
+                        
+                        <div class="absolute right-4 top-4 opacity-10 text-brand-gold text-9xl pointer-events-none">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
 
-        <div class="devices-grid">
-            <div class="device-box">
-                <i class="fa-solid fa-tv"></i>
-                <h4>Smart TV</h4>
-            </div>
-            <div class="device-box">
-                <i class="fa-solid fa-box"></i>
-                <h4>Android Box</h4>
-            </div>
-            <div class="device-box">
-                <i class="fa-solid fa-fire"></i>
-                <h4>Firestick</h4>
-            </div>
-            <div class="device-box">
-                <i class="fa-solid fa-mobile-screen"></i>
-                <h4>Telefon / Tablet</h4>
-            </div>
-            <div class="device-box">
-                <i class="fa-solid fa-laptop"></i>
-                <h4>MAG / PC</h4>
+                        <div class="flex items-center justify-between border-b border-slate-700/80 pb-6 mb-6">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-file-pdf text-brand-gold text-3xl"></i>
+                                <div>
+                                    <h4 class="text-base font-black text-white tracking-wide uppercase">ELDORATV GARANCIJA KVALITETA</h4>
+                                    <p class="text-[11px] text-slate-400 font-mono">Dokument: PDF-GARANCIJA-2026</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 text-xs sm:text-sm text-slate-300 relative z-10">
+                            <div class="p-4 rounded-xl bg-obsidian-900/90 border border-brand-gold/20 space-y-3 font-mono text-xs">
+                                <div class="flex justify-between text-slate-400">
+                                    <span>Status Dokumenta:</span>
+                                    <span class="text-brand-emerald font-bold">Aktivno i Pravno Valjano</span>
+                                </div>
+                                <div class="flex justify-between text-slate-400">
+                                    <span>Datum Kupovine / Izdavanja:</span>
+                                    <span class="text-brand-cyan font-bold" id="currentDateCert">28.09.2026</span>
+                                </div>
+                                <div class="flex justify-between text-slate-400">
+                                    <span>Pravo na povrat novca:</span>
+                                    <span class="text-brand-gold font-bold">100% u cijelosti</span>
+                                </div>
+                            </div>
+
+                            <p class="text-slate-200 font-medium leading-relaxed bg-brand-gold/10 p-4 rounded-xl border border-brand-gold/20">
+                                <i class="fa-solid fa-quote-left text-brand-gold opacity-50 mr-2"></i>
+                                EldoraTV je legalna platforma koja nudi usluge širom svijeta. Korisnik pri kupovini dobija garanciju u PDF formatu sa tačnim datumom kupovine. Ukoliko se u periodu pretplate bilo kada pojave problemi te korisnik bude nezadovoljan, ima apsolutno pravo na povrat novca u cijelosti!
+                            </p>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-700/80 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-full bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-sm font-bold">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="text-xs font-semibold text-white">Globalno Važeći Dokument</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Guarantee Description Text -->
+                <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-gold/10 text-brand-gold text-xs font-bold uppercase tracking-wider border border-brand-gold/30">
+                        <i class="fa-solid fa-file-contract"></i> Vaša Sigurnost Je Zagarantovana
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Zvanična PDF Garancija i <span class="text-gradient-gold">Povrat Novca u Cijelosti</span>
+                    </h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        EldoraTV se ponosi svojim transparentnim i legalnim poslovanjem širom svijeta. Kako bismo opravdali vaše povjerenje, <strong>uz svaku narudžbu automatski se generiše PDF garancija sa tačnim datumom vaše kupovine.</strong>
+                    </p>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Ukoliko se tokom trajanja vaše pretplate bilo kada pojave tehnički problemi, ili iz bilo kog razloga budete nezadovoljni našom uslugom – <strong>imate pravo na puni povrat novca u cijelosti!</strong>
+                    </p>
+
+                    <div class="pt-4">
+                        <a href="#paketi" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-brand-gold hover:bg-yellow-400 transition-colors shadow-glow-gold">
+                            <i class="fa-solid fa-shield-check"></i> Naruči Bez Rizika
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CJENOVNIK -->
-    <section id="cjenovnik">
-        <div class="section-title">
-            <h2>Naši Pretplatnički Paketi</h2>
-            <p>Izaberite paket koji vam najviše odgovara. Bez ugovorne obaveze!</p>
-        </div>
+    <!-- Content / Offer Category Showcase -->
+    <section id="ponuda" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Sve na Jednom Mjestu</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Kompletan TV & Filmski Sadržaj</p>
+            </div>
 
-        <div class="pricing-grid">
-            <!-- 1 Mjesec -->
-            <div class="price-card">
-                <div>
-                    <h3>1 Mjesec</h3>
-                    <p>Za probu i kraće periode</p>
-                    <div class="price">10€ <span>/ mj.</span></div>
-                    <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
-                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
-                        <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
+            <!-- Content Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- VOD Library -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">105.000+ Naslova (Videoteka)</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Vrhunski kinematografski hitovi, serije i kultni filmovi uz <strong>redovno ažuriranje videoteke</strong> kako bi uvijek imali najnoviji sadržaj.</p>
+                </div>
+
+                <!-- Sports -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Svi Sportski Kanali</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Pratite najvažnije fudbalske lige, košarku, moto sportove i borilačke vještine uživo u HD i 4K rezoluciji širom svijeta.</p>
+                </div>
+
+                <!-- Regional & Global -->
+                <div class="glass-card p-6 rounded-2xl glass-card-hover relative overflow-hidden group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-purple/10 border border-brand-purple/30 flex items-center justify-center text-brand-purple text-2xl mb-5 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-earth-europe"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">7.200+ Globalnih Kanala</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-4">Od lokalnih i regionalnih kanala do najvećih svjetskih medijskih kuća. Legalna distribucija sa 99.9% uptime serverima.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section id="paketi" class="py-20 relative bg-obsidian-900/60 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-gold">Transparentan Cjenovnik</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Izaberite Paket Uz 100% Garanciju</p>
+                <p class="text-slate-400 text-sm sm:text-base">Svi paketi uključuju kompletnu ponudu od 7.200+ kanala, redovno ažuriranu videoteku (105.000+) i zvaničnu PDF Garanciju.</p>
+            </div>
+
+            <!-- Pricing Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
+                
+                <!-- 1 Month Plan -->
+                <div class="glass-card p-8 rounded-3xl border-slate-800 flex flex-col justify-between relative group">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Standard</div>
+                        <h3 class="text-xl font-bold text-white">1 Mjesec</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-black text-white">10€</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-cyan"></i> 7.200+ TV Kanala</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-cyan"></i> 105.000+ Videoteka (Ažurirano)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-gold"></i> PDF Garancija Povrata</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPackage('1 Mjesec - 10€')" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-slate-800 hover:bg-slate-700 text-white transition-colors border border-slate-700">
+                        Naruči 1 Mjesec
+                    </button>
+                </div>
+
+                <!-- 6 Months Plan -->
+                <div class="glass-card p-8 rounded-3xl border-slate-800 flex flex-col justify-between relative group">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-brand-purple mb-2">Popularno</div>
+                        <h3 class="text-xl font-bold text-white">6 Mjeseci</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-black text-white">45€</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-purple"></i> Sve iz osnovnog paketa</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-purple"></i> Prioritetna 24/7 Podrška</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-gold"></i> PDF Garancija Povrata</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPackage('6 Mjeseci - 45€')" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-slate-800 hover:bg-slate-700 text-white transition-colors border border-slate-700">
+                        Naruči 6 Mjeseci
+                    </button>
+                </div>
+
+                <!-- 12 Months Plan (BEST VALUE) -->
+                <div class="glass-card p-8 rounded-3xl border-2 border-brand-cyan flex flex-col justify-between relative group shadow-glow-cyan transform lg:-translate-y-4 bg-slate-900/90">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-brand-cyan to-brand-purple text-[10px] font-black uppercase text-black tracking-widest">
+                        NAJBOLJA PONUDA
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-2 mt-2">Maksimalna Ušteda</div>
+                        <h3 class="text-2xl font-black text-white">12 Mjeseci</h3>
+                        <div class="my-4">
+                            <span class="text-5xl font-black text-gradient-cyan">70€</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-200 mb-8 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-gold"></i> 7.200+ Kanala Širom Svijeta</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-star text-brand-gold"></i> 105.000+ VOD (Redovno Ažuriranje)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-shield-check text-brand-emerald"></i> PDF Garancija & Puni Povrat</li>
+                        </ul>
+                    </div>
+                    <button onclick="selectPackage('12 Mjeseci - 70€')" class="w-full py-4 rounded-xl font-black text-xs uppercase tracking-wider bg-gradient-to-r from-brand-cyan to-brand-purple hover:opacity-95 text-black transition-all shadow-lg transform hover:scale-[1.02]">
+                        <i class="fa-solid fa-bolt mr-1"></i> Naruči 12 Mjeseci
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Meta Compliance -->
+    <footer class="bg-obsidian-900 border-t border-slate-800 text-slate-400 text-xs pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-8 pb-12 border-b border-slate-800">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-black text-white tracking-wider">ELDORA<span class="text-brand-cyan">TV</span></span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed pr-4">
+                        EldoraTV je legalna platforma koja nudi usluge širom svijeta. Našim klijentima garantujemo kvalitet uz izdavanje zvanične PDF garancije i punog povrata novca.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <p class="text-white font-bold text-sm">Pravne Informacije</p>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-cyan transition-colors text-left">Uslovi Korištenja (TOS)</a></li>
+                        <li><a href="#" class="hover:text-brand-cyan transition-colors text-left">Politika Privatnosti</a></li>
+                        <li><a href="#" class="hover:text-brand-cyan transition-colors text-left">Pravila Povrata & Garancija</a></li>
                     </ul>
                 </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%201%20mjesec" class="btn-main btn-whatsapp">Naruči Odmah</a>
-            </div>
 
-            <!-- 3 Mjeseca -->
-            <div class="price-card">
-                <div>
-                    <h3>3 Mjeseca</h3>
-                    <p>Uštedite uz tromjesečni paket</p>
-                    <div class="price">25€ <span>/ 3 mj.</span></div>
-                    <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
-                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
-                        <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
-                    </ul>
+                <div class="md:col-span-4 space-y-3">
+                    <p class="text-white font-bold text-sm">Prihvaćeni Načini Plaćanja</p>
+                    <div class="flex flex-wrap gap-2 text-lg text-slate-300">
+                        <span class="px-2.5 py-1 glass-card rounded text-xs font-semibold"><i class="fa-brands fa-cc-visa text-blue-400"></i> Visa</span>
+                        <span class="px-2.5 py-1 glass-card rounded text-xs font-semibold"><i class="fa-brands fa-cc-mastercard text-red-400"></i> Mastercard</span>
+                        <span class="px-2.5 py-1 glass-card rounded text-xs font-semibold"><i class="fa-brands fa-paypal text-blue-300"></i> PayPal</span>
+                    </div>
+                    <!-- META DISCLAIMER (Obavezno za reklamiranje) -->
+                    <div class="mt-4 p-3 rounded bg-slate-800/50 border border-slate-700/50">
+                        <p class="text-[10px] text-slate-500 leading-relaxed">
+                            <strong>* Meta Disclaimer:</strong> Ova stranica nije dio Facebook web stranice niti Meta Platforms, Inc. Pored toga, ova stranica NITI na koji način nije sponzorisana ili podržana od strane Meta Platforms, Inc. FACEBOOK je zaštitni znak kompanije META Platforms, Inc.
+                        </p>
+                    </div>
                 </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%203%20mjeseca" class="btn-main btn-whatsapp">Naruči Odmah</a>
-            </div>
 
-            <!-- 6 Mjeseci -->
-            <div class="price-card">
-                <div>
-                    <h3>6 Mjeseci</h3>
-                    <p>Polugodišnja pretplata</p>
-                    <div class="price">45€ <span>/ 6 mj.</span></div>
-                    <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
-                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
-                        <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%206%20mjeseci" class="btn-main btn-whatsapp">Naruči Odmah</a>
             </div>
-
-            <!-- 12 Mjeseci (Najpopularnije) -->
-            <div class="price-card popular">
-                <div class="popular-badge">Najpopularnije</div>
-                <div>
-                    <h3>12 Mjeseci</h3>
-                    <p>Maksimalna ušteda za cijelu godinu</p>
-                    <div class="price">75€ <span>/ 12 mj.</span></div>
-                    <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
-                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
-                        <li><i class="fa-solid fa-check"></i> Prioritetna Podrška 24/7</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%2012%20mjeseci" class="btn-main btn-whatsapp">Naruči Odmah</a>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px] gap-4">
+                <p>&copy; 2026 EldoraTV. Sva prava zadržana. Legal Global Services.</p>
+                <p class="flex items-center gap-1">
+                    <i class="fa-solid fa-shield-check text-brand-emerald"></i> 100% Sigurna i Legalna Platforma
+                </p>
             </div>
         </div>
-    </section>
-
-    <!-- BANER ZA TEST -->
-    <div class="cta-banner">
-        <h2>Želite li prvo besplatno testirati uslugu?</h2>
-        <p>Javite nam se na WhatsApp ili Viber i poslaćemo vam testnu listu na 24h u roku od nekoliko minuta!</p>
-        <div class="hero-buttons" style="margin-top: 1.5rem;">
-            <a href="https://wa.me/387603247407?text=Zdravo,%20treba%20mi%20besplatan%20test%2024h" class="btn-main btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Test</a>
-            <a href="viber://chat?number=%2B387603247407" class="btn-main btn-viber"><i class="fa-brands fa-viber"></i> Viber Test</a>
-        </div>
-    </div>
-
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="section-title">
-            <h2>Često Postavljana Pitanja</h2>
-            <p>Odgovori na najčešće nedoumice naših korisnika.</p>
-        </div>
-
-        <div class="faq-container">
-            <div class="faq-item">
-                <h4>Kako da pokrenem besplatni test?</h4>
-                <p>Dovoljno je da kliknete na WhatsApp ili Viber dugme i pošaljete nam poruku. Poslaćemo vam pristupne podatke i uputstvo u roku od par minuta.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Koja je brzina interneta potrebna?</h4>
-                <p>Za stabilan rad u HD rezoluciji preporučuje se internet brzina od najmanje 10 Mbps, a za 4K sadržaj najmanje 25 Mbps.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Na kojim aplikacijama radi vaša usluga?</h4>
-                <p>Podržavamo sve popularne aplikacije: NetTV Plus, Tivimate, Smart IPTV, IPTV Smarters Pro, GSE Smart IPTV, SS IPTV, Duplex Play i mnoge druge.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PLUTAJUĆI CONTACT GUMBI -->
-    <div class="floating-contact">
-        <a href="https://wa.me/387603247407?text=Zdravo,%20zanima%20me%20EldoraTV" class="float-btn float-wa" target="_blank" title="Kontaktirajte nas na WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="viber://chat?number=%2B387603247407" class="float-btn float-vb" title="Kontaktirajte nas na Viber">
-            <i class="fa-brands fa-viber"></i>
-        </a>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 EldoraTV. Sva prava zadržana. Tel/WhatsApp/Viber: 060 324 7407 (+387 60 324 7407)</p>
     </footer>
+
+    <!-- MODAL: ORDER SELECTION -->
+    <div id="orderModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border-slate-700 relative text-left bg-obsidian-900">
+            <button onclick="closeModal('orderModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-cart-shopping text-brand-cyan text-2xl"></i>
+                <h3 class="text-xl font-extrabold text-white">Naručivanje Pretplate</h3>
+            </div>
+            <p class="text-xs text-slate-300 mb-6">Izabrali ste paket: <strong id="selectedPackageName" class="text-brand-gold text-sm">12 Mjeseci - 70€</strong></p>
+            
+            <form id="orderForm" onsubmit="submitForm(event, 'orderModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Vaše Ime i Prezime *</label>
+                    <input type="text" required class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-brand-cyan">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">E-mail (Za dostavu PDF Garancije) *</label>
+                    <input type="email" required class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-brand-cyan">
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider text-black bg-gradient-to-r from-brand-cyan to-brand-purple hover:opacity-95 transition-all shadow-glow-cyan">
+                        Završi Narudžbu
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: FREE TEST -->
+    <div id="testModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border-slate-700 relative text-left bg-obsidian-900">
+            <button onclick="closeModal('testModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <i class="fa-solid fa-bolt text-brand-gold text-2xl"></i>
+                <h3 class="text-xl font-extrabold text-white">Besplatan 24h Test</h3>
+            </div>
+            <p class="text-xs text-slate-300 mb-6">Unesite svoje podatke za aktivaciju probnog perioda bez obaveza.</p>
+            
+            <form id="testForm" onsubmit="submitForm(event, 'testModal')" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">E-mail adresa *</label>
+                    <input type="email" required placeholder="vas@email.com" class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-brand-cyan">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Uređaj za gledanje *</label>
+                    <select required class="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white text-sm focus:outline-none focus:border-brand-cyan">
+                        <option value="">Izaberite...</option>
+                        <option value="tv">Smart TV / Android Box</option>
+                        <option value="pc">PC / Laptop / Mobitel</option>
+                    </select>
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider text-black bg-brand-gold hover:bg-yellow-400 transition-all shadow-glow-gold">
+                        Zatraži Test
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Funkcije -->
+    <script>
+        // Modal logika
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+        
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+        
+        function selectPackage(pkgName) {
+            document.getElementById('selectedPackageName').innerText = pkgName;
+            openModal('orderModal');
+        }
+        
+        function submitForm(e, modalId) {
+            e.preventDefault();
+            alert("Vaš zahtjev je uspješno poslan! Kontaktirat ćemo Vas putem e-maila ubrzo.");
+            closeModal(modalId);
+        }
+
+        // Postavljanje trenutnog datuma na PDF garanciji
+        const today = new Date();
+        const dateString = today.toLocaleDateString('bs-BA', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        const certDate = document.getElementById('currentDateCert');
+        if(certDate) {
+            certDate.innerText = dateString;
+        }
+    </script>
 
 </body>
 </html>
