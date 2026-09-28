@@ -1,44 +1,33 @@
-
-Mozes li poboljsati ovu stranicu, moras prilagoditi i naglasiti da su EldoraTV - legalna tv koja nudi usluge sirom svijeta. Te korisnik pri kupovini dobija garanciju u PDF formatu sa datumom kupovine i ukoliko se u periodu pretplate bilo kada pojave problemi te korisnik bude nezadovoljan ima pravo na povrat novca u cijelosti.
-
-Stranica ce biti reklamirana na Meta te ne smije krsiti prava meta-e. 
-
-Sto se tice broja kanala i videoteke:
-Kanala : 7.200+
-Videoteka: 105.000+ ( redovno ažuriranje videoteke )
-LOGO na da bude na vrhu kada se otvori stranica na sredini ekrana vecih dimezija da je prvo sto se vidi bude to, logo se nalazi u glavnom folderu u Githubu pod nazivom eldoralogo.PNG te mi daj kompletan kod za GitHub bez greske. Slobodno dodaj opcije koje ti mislis da bi jos bolje i profesionalnije stranica izgledala i privukla klijente.
-
-Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi novi kod:
-
 <!DOCTYPE html>
 <html lang="bs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EldoraTV | Najbolja IPTV Usluga - Besplatan Test 24h</title>
-    <meta name="description" content="EldoraTV vam nudi preko 15.000 TV kanala i 60.000+ filmova i serija u 4K i FHD rezoluciji. Zatražite besplatan test od 24h odmah!">
+    <title>EldoraTV | Legalna Globalna TV Usluga - 100% Garancija & PDF Potvrda</title>
+    <meta name="description" content="EldoraTV nudi legalne TV usluge širom svijeta. Preko 7.200+ TV kanala i 105.000+ filmova i serija uz pismenu PDF garanciju i 100% povrat novca.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Ikone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(22, 31, 49, 0.7);
+            --bg-color: #080c14;
+            --card-bg: rgba(18, 26, 43, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
             --primary-accent: #7c3aed;
             --primary-glow: #a855f7;
             --secondary-accent: #06b6d4;
-            --gold-accent: #fbbf24;
+            --gold-accent: #f59e0b;
+            --success-green: #10b981;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --whatsapp-green: #25d366;
             --viber-purple: #7360f2;
-            --border-color: rgba(255, 255, 255, 0.08);
         }
 
         * {
@@ -56,26 +45,67 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
             overflow-x: hidden;
         }
 
-        /* --- BACKGROUND DECORATION --- */
+        /* --- BACKGROUND AMBIENT GLOWS --- */
         .glow-sphere {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(140px);
             z-index: -1;
-            opacity: 0.35;
+            opacity: 0.3;
             pointer-events: none;
         }
-        .glow-1 { top: -100px; left: -100px; width: 450px; height: 450px; background: var(--primary-accent); }
-        .glow-2 { top: 600px; right: -100px; width: 500px; height: 500px; background: var(--secondary-accent); }
+        .glow-1 { top: -120px; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: var(--primary-accent); }
+        .glow-2 { top: 800px; right: -100px; width: 500px; height: 500px; background: var(--secondary-accent); }
+        .glow-3 { top: 1800px; left: -100px; width: 500px; height: 500px; background: var(--gold-accent); opacity: 0.15; }
+
+        /* --- TOP BRAND HEADER (HERO LOGO) --- */
+        .top-brand-header {
+            width: 100%;
+            padding: 2.5rem 1rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .main-logo-container {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .main-logo-container:hover {
+            transform: scale(1.03);
+        }
+
+        .main-logo {
+            max-width: 320px;
+            width: 90%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 25px rgba(124, 58, 237, 0.35));
+        }
+
+        .logo-fallback {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+        .logo-fallback span {
+            color: var(--primary-glow);
+        }
 
         /* --- NAVBAR --- */
         header {
             position: sticky;
             top: 0;
             width: 100%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(8, 12, 20, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--card-border);
             z-index: 1000;
         }
 
@@ -88,34 +118,15 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
             padding: 0.8rem 1.5rem;
         }
 
-        .logo-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-box img {
-            height: 48px;
+        .nav-logo-small {
+            height: 38px;
             width: auto;
-            object-fit: contain;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-text span {
-            color: var(--primary-glow);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.8rem;
             align-items: center;
         }
 
@@ -123,7 +134,7 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             transition: 0.3s ease;
         }
 
@@ -134,8 +145,9 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
         .nav-btn {
             background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
             color: #fff !important;
-            padding: 0.6rem 1.3rem;
+            padding: 0.6rem 1.4rem;
             border-radius: 30px;
+            font-weight: 700;
             box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
         }
 
@@ -146,30 +158,53 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 5rem 1.5rem 4rem;
+            padding: 3rem 1.5rem 4rem;
             text-align: center;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             position: relative;
         }
 
-        .badge-test {
+        .hero-badges-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+        }
+
+        .badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(124, 58, 237, 0.15);
-            border: 1px solid rgba(124, 58, 237, 0.4);
-            color: var(--primary-glow);
-            padding: 0.4rem 1.2rem;
+            padding: 0.45rem 1.2rem;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-legal {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: var(--success-green);
+        }
+
+        .badge-global {
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            color: var(--secondary-accent);
+        }
+
+        .badge-warranty {
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: var(--gold-accent);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 1.2rem;
@@ -179,15 +214,18 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
 
@@ -195,85 +233,152 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 0.9rem 2rem;
-            border-radius: 12px;
+            padding: 1rem 2.2rem;
+            border-radius: 14px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.05rem;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
+            border: none;
         }
 
         .btn-whatsapp {
             background: var(--whatsapp-green);
             color: #fff;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
         }
 
         .btn-whatsapp:hover {
             background: #20bd5a;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
         }
 
         .btn-viber {
             background: var(--viber-purple);
             color: #fff;
-            box-shadow: 0 4px 20px rgba(115, 96, 242, 0.3);
+            box-shadow: 0 6px 20px rgba(115, 96, 242, 0.35);
         }
 
         .btn-viber:hover {
             background: #614de0;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(115, 96, 242, 0.5);
+            box-shadow: 0 10px 28px rgba(115, 96, 242, 0.5);
         }
 
+        /* --- WARRANTY BANNER (PDF & REFUND HIGHLIGHT) --- */
+        .warranty-highlight-box {
+            max-width: 1100px;
+            margin: 2rem auto 4rem;
+            padding: 2.2rem;
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(124, 58, 237, 0.15));
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .warranty-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        .warranty-icon {
+            width: 55px;
+            height: 55px;
+            min-width: 55px;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--gold-accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .warranty-text h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .warranty-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* --- STATS GRID --- */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             max-width: 1100px;
-            margin: 4rem auto 0;
+            margin: 0 auto 5rem;
             padding: 0 1.5rem;
         }
 
         .stat-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.8rem;
-            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
             text-align: center;
             backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124, 58, 237, 0.4);
         }
 
         .stat-card h3 {
-            font-size: 2rem;
+            font-size: 2.3rem;
             color: var(--primary-glow);
             font-weight: 800;
+            margin-bottom: 0.2rem;
         }
 
         .stat-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
-        /* --- FEATURES --- */
+        .stat-card .sub-note {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gold-accent);
+            margin-top: 0.3rem;
+        }
+
+        /* --- SECTION TITLE --- */
         .section-title {
             text-align: center;
-            margin: 5rem 0 3rem;
+            margin: 4rem 0 2.8rem;
             padding: 0 1.5rem;
         }
 
         .section-title h2 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 800;
         }
 
         .section-title p {
             color: var(--text-muted);
             margin-top: 0.5rem;
+            font-size: 1.05rem;
         }
 
+        /* --- FEATURES --- */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -285,33 +390,35 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
 
         .feature-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 20px;
-            transition: 0.3s;
+            border: 1px solid var(--card-border);
+            padding: 2.2rem;
+            border-radius: 22px;
+            transition: 0.3s ease;
         }
 
         .feature-card:hover {
             border-color: rgba(124, 58, 237, 0.5);
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
 
         .feature-icon {
-            width: 55px;
-            height: 55px;
+            width: 58px;
+            height: 58px;
             background: rgba(124, 58, 237, 0.15);
             color: var(--primary-glow);
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            margin-bottom: 1.3rem;
         }
 
         .feature-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             margin-bottom: 0.6rem;
+            color: #fff;
         }
 
         .feature-card p {
@@ -331,7 +438,7 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
 
         .price-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--card-border);
             border-radius: 24px;
             padding: 2.5rem 1.8rem;
             text-align: center;
@@ -342,10 +449,15 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
             transition: 0.3s ease;
         }
 
+        .price-card:hover {
+            border-color: rgba(124, 58, 237, 0.5);
+        }
+
         .price-card.popular {
             border: 2px solid var(--primary-glow);
-            background: rgba(30, 27, 75, 0.6);
+            background: rgba(26, 21, 60, 0.75);
             transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.25);
         }
 
         .popular-badge {
@@ -355,23 +467,24 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
             transform: translateX(-50%);
             background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
             color: #fff;
-            padding: 0.3rem 1.2rem;
+            padding: 0.4rem 1.3rem;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .price-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .price {
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             font-weight: 800;
             color: #fff;
-            margin: 1rem 0;
+            margin: 1.2rem 0;
         }
 
         .price span {
@@ -387,7 +500,7 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
         }
 
         .price-features li {
-            padding: 0.5rem 0;
+            padding: 0.55rem 0;
             color: var(--text-muted);
             font-size: 0.95rem;
             display: flex;
@@ -396,13 +509,17 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
         }
 
         .price-features li i {
-            color: var(--whatsapp-green);
+            color: var(--success-green);
+        }
+
+        .price-features li.highlight-pdf i {
+            color: var(--gold-accent);
         }
 
         /* --- DEVICES --- */
         .devices-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 1.5rem;
             max-width: 1000px;
             margin: 0 auto;
@@ -412,90 +529,118 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
 
         .device-box {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.5rem;
-            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            padding: 1.8rem 1.2rem;
+            border-radius: 18px;
+            transition: 0.3s ease;
+        }
+
+        .device-box:hover {
+            transform: translateY(-4px);
+            border-color: var(--secondary-accent);
         }
 
         .device-box i {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--secondary-accent);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.9rem;
         }
 
         .device-box h4 {
             font-size: 1rem;
+            font-weight: 700;
         }
 
         /* --- CTA BANNER --- */
         .cta-banner {
             max-width: 1100px;
             margin: 6rem auto;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(6, 182, 212, 0.2));
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(6, 182, 212, 0.25));
             border: 1px solid var(--primary-glow);
-            border-radius: 24px;
+            border-radius: 28px;
             padding: 3.5rem 2rem;
             text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
 
         .cta-banner h2 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
 
         /* --- FAQ --- */
         .faq-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
         .faq-item {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            padding: 1.2rem 1.5rem;
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            margin-bottom: 1.2rem;
+            padding: 1.4rem 1.6rem;
+            transition: 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(124, 58, 237, 0.4);
         }
 
         .faq-item h4 {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #fff;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item h4 i {
+            color: var(--primary-glow);
         }
 
         .faq-item p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
+            line-height: 1.6;
         }
 
-        /* --- FLOATING BUTTONS --- */
+        /* --- FLOATING CONTACT BUTTONS --- */
         .floating-contact {
             position: fixed;
             bottom: 25px;
             right: 25px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             z-index: 9999;
         }
 
         .float-btn {
-            width: 55px;
-            height: 55px;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             transition: 0.3s transform ease;
         }
 
         .float-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.12);
         }
 
         .float-wa { background-color: var(--whatsapp-green); }
@@ -503,19 +648,57 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
 
         /* --- FOOTER --- */
         footer {
-            border-top: 1px solid var(--border-color);
-            padding: 2.5rem 1.5rem;
-            text-align: center;
+            border-top: 1px solid var(--card-border);
+            padding: 3rem 1.5rem 2.5rem;
+            background: #05080e;
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-top: 5rem;
+            margin-top: 6rem;
         }
 
-        /* Responsive Mobile */
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin: 1.5rem 0;
+            line-height: 1.5;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
             nav ul { display: none; }
             .price-card.popular { transform: none; }
+            .main-logo { max-width: 240px; }
+            .warranty-highlight-box { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -524,17 +707,26 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
     <!-- Pozadinski svjetlosni efekti -->
     <div class="glow-sphere glow-1"></div>
     <div class="glow-sphere glow-2"></div>
+    <div class="glow-sphere glow-3"></div>
+
+    <!-- LOGO NA SAMOM VRHU (CENTRRIRAN I VELIK) -->
+    <div class="top-brand-header">
+        <a href="#" class="main-logo-container">
+            <img src="eldoralogo.PNG" alt="EldoraTV Službeni Logo" class="main-logo" onerror="this.style.display='none'; document.getElementById('main-logo-alt').style.display='block';">
+            <div id="main-logo-alt" class="logo-fallback" style="display:none;">Eldora<span>TV</span></div>
+        </a>
+    </div>
 
     <!-- NAVBAR -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo-box">
-                <img src="eldoralogo.PNG" alt="EldoraTV Logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
-                <span id="alt-logo" class="logo-text" style="display:none;">Eldora<span>TV</span></span>
+            <a href="#" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                <span style="font-weight: 800; font-size: 1.3rem; color: #fff;">Eldora<span style="color: var(--primary-glow);">TV</span></span>
             </a>
             <nav>
                 <ul>
                     <li><a href="#pocetna">Početna</a></li>
+                    <li><a href="#garancija">Garancija & Legalnost</a></li>
                     <li><a href="#prednosti">Prednosti</a></li>
                     <li><a href="#cjenovnik">Cjenovnik</a></li>
                     <li><a href="#uredjaji">Uređaji</a></li>
@@ -547,69 +739,104 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
 
     <!-- HERO SEKCIJA -->
     <section class="hero" id="pocetna">
-        <div class="badge-test">
-            <i class="fa-solid fa-bolt"></i> Besplatan Test Od 24 Sata
+        <div class="hero-badges-group">
+            <div class="badge badge-legal"><i class="fa-solid fa-shield-check"></i> 100% Legalna Usluga</div>
+            <div class="badge badge-global"><i class="fa-solid fa-globe"></i> Globalno Dostupno</div>
+            <div class="badge badge-warranty"><i class="fa-solid fa-file-pdf"></i> PDF Garancija</div>
         </div>
-        <h1>Gledajte Omiljene Kanale, Filmove i Serije Bez Prekida</h1>
-        <p>Preko 15.000 TV kanala i 60.000+ VOD filmova i serija u 4K i Full HD kvalitetu. Stabilna usluga prilagođena svim uređajima.</p>
+
+        <h1>Gledajte Omiljene Kanale i Videoteku Bilo Gdje u Svijetu</h1>
+        <p>EldoraTV je licencirani i legalni pružatelj TV usluga sa garancijom kvaliteta. Uz svaku pretplatu dobijate pismenu PDF garanciju sa tačnim datumom kupovine i pravo na 100% povrat novca.</p>
         
         <div class="hero-buttons">
             <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20besplatan%20test%2024h%20za%20EldoraTV" class="btn-main btn-whatsapp" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Testiraj Putem WhatsApp-a
+                <i class="fa-brands fa-whatsapp"></i> Besplatan Test (WhatsApp)
             </a>
             <a href="viber://chat?number=%2B387603247407" class="btn-main btn-viber">
-                <i class="fa-brands fa-viber"></i> Testiraj Putem Viber-a
+                <i class="fa-brands fa-viber"></i> Besplatan Test (Viber)
             </a>
         </div>
     </section>
 
+    <!-- ZVANIČNA PDF GARANCIJA I POVRAT NOVCA (POSEBAN HIGHLIGHT) -->
+    <div class="warranty-highlight-box" id="garancija">
+        <div class="warranty-item">
+            <div class="warranty-icon"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="warranty-text">
+                <h4>Pismena PDF Garancija</h4>
+                <p>Nakon kupovine dobijate zvaničnu garanciju u PDF formatu sa jasno naznačenim datumom kupovine i trajanjem usluge.</p>
+            </div>
+        </div>
+        <div class="warranty-item">
+            <div class="warranty-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <div class="warranty-text">
+                <h4>100% Povrat Novca</h4>
+                <p>Ukoliko se u periodu pretplate pojavi bilo kakav problem ili budete nezadovoljni, imate pravo na potpun povrat novca.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- BRZA STATISTIKA -->
     <div class="stats-grid">
         <div class="stat-card">
-            <h3>15.000+</h3>
+            <h3>7.200+</h3>
             <p>Uživo TV Kanala</p>
+            <span class="sub-note">Svjetski i regionalni kanali</span>
         </div>
         <div class="stat-card">
-            <h3>60.000+</h3>
+            <h3>105.000+</h3>
             <p>Filmova i Serija</p>
+            <span class="sub-note">Redovno ažuriranje videoteke</span>
         </div>
         <div class="stat-card">
-            <h3>4K / FHD</h3>
-            <p>Vrhunska Slika</p>
+            <h3>100%</h3>
+            <p>Garancija Sigurnosti</p>
+            <span class="sub-note">PDF potvrda uz kupovinu</span>
         </div>
         <div class="stat-card">
-            <h3>99.9%</h3>
-            <p>Stabilnost & Uptime</p>
+            <h3>24/7</h3>
+            <p>Korisnička Podrška</p>
+            <span class="sub-note">Dostupni širom svijeta</span>
         </div>
     </div>
 
     <!-- PREDNOSTI -->
     <section class="features" id="prednosti">
         <div class="section-title">
-            <h2>Zašto Izabrati EldoraTV?</h2>
-            <p>Osiguravamo vrhunsko iskustvo gledanja uz najsavremeniju tehnologiju.</p>
+            <h2>Zašto Je EldoraTV Vaš Najbolji Izbor?</h2>
+            <p>Sigurnost, legalnost i vrhunski kvalitet striminga bez kompromisa.</p>
         </div>
 
         <div class="features-grid">
             <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>Globalna Dostupnost</h3>
+                <p>Gledajte omiljene sadržaje u bilo kojoj zemlji svijeta. Sve što vam je potrebno jeste stabilna internet konekcija.</p>
+            </div>
+            <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Anti-Freeze Tehnologija</h3>
-                <p>Naši serveri omogućavaju gledanje sportskih događaja i kanala uživo bez seckanja i baferovanja.</p>
+                <h3>Anti-Freeze Stabilnost</h3>
+                <p>Napredna serverska infrastruktura osigurava gledanje bez baferovanja i seckanja čak i tokom najgledanijih sportskih događaja.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-tv"></i></div>
-                <h3>EX-YU & Svjetski Kanali</h3>
-                <p>Svi sportski (Arena, SportKlub), filmski, dokumentarni i dječiji kanali na jednom mjestu.</p>
+                <div class="feature-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <h3>Redovno Ažuriranje Videoteke</h3>
+                <p>Preko 105.000 filmova i serija sa prevodom uz svakodnevno dodavanje najnovijih premijera i novih epizoda.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-film"></i></div>
-                <h3>Bogata VOD Biblioteka</h3>
-                <p>Najnoviji holivudski i domaći filmovi i serije sa prevodom, redovno ažurirani.</p>
+                <div class="feature-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <h3>Službena PDF Garancija</h3>
+                <p>Svaki klijent dobija transparentan PDF dokument sa datumom uplate koji garantuje potpunu zaštitu vaših prava.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-display"></i></div>
+                <h3>Vrhunska 4K & FHD Rezolucija</h3>
+                <p>Uživajte u kristalno čistoj slici sa visokim FPS-om prilagođenom za velike Smart TV ekrane.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
-                <h3>Korisnička Podrška 24/7</h3>
-                <p>Brza pomoć pri podešavanju i instalaciji aplikacija na vaše uređaje u bilo koje doba dana.</p>
+                <h3>Brza Podrška 24/7</h3>
+                <p>Naš tehnički tim vam je na raspolaganju u svakom trenutku putem WhatsApp-a i Viber-a za brzu instalaciju.</p>
             </div>
         </div>
     </section>
@@ -617,8 +844,8 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
     <!-- PODRŽANI UREĐAJI -->
     <section id="uredjaji">
         <div class="section-title">
-            <h2>Gledajte Na Svim Uređajima</h2>
-            <p>EldoraTV je kompatibilna sa svim popularnim platformama.</p>
+            <h2>Jednostavno Gledanje Na Svim Uređajima</h2>
+            <p>Jedna pretplata – podrška za sve vaše pametne uređaje.</p>
         </div>
 
         <div class="devices-grid">
@@ -636,11 +863,11 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
             </div>
             <div class="device-box">
                 <i class="fa-solid fa-mobile-screen"></i>
-                <h4>Telefon / Tablet</h4>
+                <h4>Mobilni / Tablet</h4>
             </div>
             <div class="device-box">
                 <i class="fa-solid fa-laptop"></i>
-                <h4>MAG / PC</h4>
+                <h4>PC / Laptop</h4>
             </div>
         </div>
     </section>
@@ -648,8 +875,8 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
     <!-- CJENOVNIK -->
     <section id="cjenovnik">
         <div class="section-title">
-            <h2>Naši Pretplatnički Paketi</h2>
-            <p>Izaberite paket koji vam najviše odgovara. Bez ugovorne obaveze!</p>
+            <h2>Pretplatnički Paketi sa PDF Garancijom</h2>
+            <p>Izaberite paket koji vam odgovara. Svi paketi uključuju 100% povrat novca u slučaju nezadovoljstva.</p>
         </div>
 
         <div class="pricing-grid">
@@ -660,14 +887,15 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
                     <p>Za probu i kraće periode</p>
                     <div class="price">10€ <span>/ mj.</span></div>
                     <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> 7.200+ TV Kanala</li>
+                        <li><i class="fa-solid fa-check"></i> 105.000+ Filmova & Serija</li>
+                        <li class="highlight-pdf"><i class="fa-solid fa-file-pdf"></i> Zvanična PDF Garancija</li>
+                        <li><i class="fa-solid fa-check"></i> 100% Povrat Novca</li>
                         <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
                         <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%201%20mjesec" class="btn-main btn-whatsapp">Naruči Odmah</a>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%201%20mjesec" class="btn-main btn-whatsapp">Naruči Uz Garanciju</a>
             </div>
 
             <!-- 3 Mjeseca -->
@@ -677,31 +905,33 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
                     <p>Uštedite uz tromjesečni paket</p>
                     <div class="price">25€ <span>/ 3 mj.</span></div>
                     <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> 7.200+ TV Kanala</li>
+                        <li><i class="fa-solid fa-check"></i> 105.000+ Filmova & Serija</li>
+                        <li class="highlight-pdf"><i class="fa-solid fa-file-pdf"></i> Zvanična PDF Garancija</li>
+                        <li><i class="fa-solid fa-check"></i> 100% Povrat Novca</li>
                         <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
                         <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%203%20mjeseca" class="btn-main btn-whatsapp">Naruči Odmah</a>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%203%20mjeseca" class="btn-main btn-whatsapp">Naruči Uz Garanciju</a>
             </div>
 
             <!-- 6 Mjeseci -->
             <div class="price-card">
                 <div>
                     <h3>6 Mjeseci</h3>
-                    <p>Polugodišnja pretplata</p>
+                    <p>Polugodišnja stabilna pretplata</p>
                     <div class="price">45€ <span>/ 6 mj.</span></div>
                     <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> 7.200+ TV Kanala</li>
+                        <li><i class="fa-solid fa-check"></i> 105.000+ Filmova & Serija</li>
+                        <li class="highlight-pdf"><i class="fa-solid fa-file-pdf"></i> Zvanična PDF Garancija</li>
+                        <li><i class="fa-solid fa-check"></i> 100% Povrat Novca</li>
                         <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
                         <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%206%20mjeseci" class="btn-main btn-whatsapp">Naruči Odmah</a>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%206%20mjeseci" class="btn-main btn-whatsapp">Naruči Uz Garanciju</a>
             </div>
 
             <!-- 12 Mjeseci (Najpopularnije) -->
@@ -712,47 +942,52 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
                     <p>Maksimalna ušteda za cijelu godinu</p>
                     <div class="price">75€ <span>/ 12 mj.</span></div>
                     <ul class="price-features">
-                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
-                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> 7.200+ TV Kanala</li>
+                        <li><i class="fa-solid fa-check"></i> 105.000+ Filmova & Serija</li>
+                        <li class="highlight-pdf"><i class="fa-solid fa-file-pdf"></i> Zvanična PDF Garancija sa Datumom</li>
+                        <li><i class="fa-solid fa-check"></i> 100% Povrat Novca Bilo Kada</li>
                         <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
-                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
                         <li><i class="fa-solid fa-check"></i> Prioritetna Podrška 24/7</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%2012%20mjeseci" class="btn-main btn-whatsapp">Naruči Odmah</a>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%2012%20mjeseci" class="btn-main btn-whatsapp">Naruči Uz Garanciju</a>
             </div>
         </div>
     </section>
 
-    <!-- BANER ZA TEST -->
+    <!-- BANER ZA BESPLATAN TEST -->
     <div class="cta-banner">
-        <h2>Želite li prvo besplatno testirati uslugu?</h2>
-        <p>Javite nam se na WhatsApp ili Viber i poslaćemo vam testnu listu na 24h u roku od nekoliko minuta!</p>
-        <div class="hero-buttons" style="margin-top: 1.5rem;">
-            <a href="https://wa.me/387603247407?text=Zdravo,%20treba%20mi%20besplatan%20test%2024h" class="btn-main btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Test</a>
-            <a href="viber://chat?number=%2B387603247407" class="btn-main btn-viber"><i class="fa-brands fa-viber"></i> Viber Test</a>
+        <h2>Isprobajte Besplatno Prije Kupovine!</h2>
+        <p>Javite nam se na WhatsApp ili Viber i poslaćemo vam besplatnu testnu listu na 24h u roku od nekoliko minuta bez ikakvih obaveza.</p>
+        <div class="hero-buttons">
+            <a href="https://wa.me/387603247407?text=Zdravo,%20treba%20mi%20besplatan%20test%2024h" class="btn-main btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Besplatan Test</a>
+            <a href="viber://chat?number=%2B387603247407" class="btn-main btn-viber"><i class="fa-brands fa-viber"></i> Viber Besplatan Test</a>
         </div>
     </div>
 
     <!-- FAQ -->
     <section id="faq">
         <div class="section-title">
-            <h2>Često Postavljana Pitanja</h2>
-            <p>Odgovori na najčešće nedoumice naših korisnika.</p>
+            <h2>Često Postavljana Pitanja (FAQ)</h2>
+            <p>Odgovori na ključna pitanja o garanciji, radu i aktivaciji usluge.</p>
         </div>
 
         <div class="faq-container">
             <div class="faq-item">
-                <h4>Kako da pokrenem besplatni test?</h4>
-                <p>Dovoljno je da kliknete na WhatsApp ili Viber dugme i pošaljete nam poruku. Poslaćemo vam pristupne podatke i uputstvo u roku od par minuta.</p>
+                <h4><i class="fa-solid fa-circle-question"></i> Kako funkcioniše PDF garancija i 100% povrat novca?</h4>
+                <p>Nakon izvršene uplate poslaćemo vam zvaničan PDF dokument na kojem je jasno ispisan datum kupovine i trajanje vaše pretplate. Ukoliko tokom perioda pretplate naiđete na bilo kakve netačnosti ili budete nezadovoljni uslugom, garantujemo vam 100% povrat novca.</p>
             </div>
             <div class="faq-item">
-                <h4>Koja je brzina interneta potrebna?</h4>
-                <p>Za stabilan rad u HD rezoluciji preporučuje se internet brzina od najmanje 10 Mbps, a za 4K sadržaj najmanje 25 Mbps.</p>
+                <h4><i class="fa-solid fa-circle-question"></i> Da li vaša usluga radi širom svijeta?</h4>
+                <p>Da! EldoraTV je globalno dostupna usluga. Bez obzira da li se nalazite u Evropi, Americi, Australiji ili bilo kom drugom dijelu svijeta, možete neometano gledati sve sadržaje.</p>
             </div>
             <div class="faq-item">
-                <h4>Na kojim aplikacijama radi vaša usluga?</h4>
-                <p>Podržavamo sve popularne aplikacije: NetTV Plus, Tivimate, Smart IPTV, IPTV Smarters Pro, GSE Smart IPTV, SS IPTV, Duplex Play i mnoge druge.</p>
+                <h4><i class="fa-solid fa-circle-question"></i> Kako da pokrenem besplatni test od 24h?</h4>
+                <p>Jednostavno kliknite na dugme za WhatsApp ili Viber i pošaljite nam poruku. Poslaćemo vam pristupne podatke i detaljno uputstvo za instalaciju u roku od 5 minuta.</p>
+            </div>
+            <div class="faq-item">
+                <h4><i class="fa-solid fa-circle-question"></i> Koje aplikacije podržavate?</h4>
+                <p>Podržavamo sve standardne aplikacije: Tivimate, Smart IPTV, IPTV Smarters Pro, NetTV Plus, GSE Smart IPTV, SS IPTV, Duplex Play i mnoge druge.</p>
             </div>
         </div>
     </section>
@@ -767,11 +1002,23 @@ Ovo je stari index.html a ti ga preuredi uskladjeno sa mojim zahtjevima i daj mi
         </a>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (META ADS COMPLIANT) -->
     <footer>
-        <p>&copy; 2026 EldoraTV. Sva prava zadržana. Tel/WhatsApp/Viber: 060 324 7407 (+387 60 324 7407)</p>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#pocetna">Početna</a>
+                <a href="#garancija">PDF Garancija</a>
+                <a href="#cjenovnik">Cjenovnik</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            
+            <p>&copy; 2026 EldoraTV. Sva prava zadržana. Kontakt / Viber / WhatsApp: +387 60 324 7407</p>
+
+            <div class="footer-disclaimer">
+                <strong>Izjava o odricanju odgovornosti (Meta Compliance):</strong> Ovaj sajt nije dio Facebook ili Instagram veb stranice niti Meta Platforms, Inc. Pored toga, ovaj sajt NIKAKO nije podržan od strane Meta-e. FACEBOOK i INSTAGRAM su zaštitni znakovi kompanije META Platforms, Inc. EldoraTV nudi isključivo legalne digitalne TV usluge u skladu sa međunarodnim standardima.
+            </div>
+        </div>
     </footer>
 
 </body>
 </html>
-
