@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EldoraTV | Najbolja IPTV Usluga - Besplatan Test 24h</title>
+    <meta name="description" content="EldoraTV vam nudi preko 15.000 TV kanala i 60.000+ filmova i serija u 4K i FHD rezoluciji. Zatražite besplatan test od 24h odmah!">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Ikone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 31, 49, 0.7);
+            --primary-accent: #7c3aed;
+            --primary-glow: #a855f7;
+            --secondary-accent: #06b6d4;
+            --gold-accent: #fbbf24;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --whatsapp-green: #25d366;
+            --viber-purple: #7360f2;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND DECORATION --- */
+        .glow-sphere {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.35;
+            pointer-events: none;
+        }
+        .glow-1 { top: -100px; left: -100px; width: 450px; height: 450px; background: var(--primary-accent); }
+        .glow-2 { top: 600px; right: -100px; width: 500px; height: 500px; background: var(--secondary-accent); }
+
+        /* --- NAVBAR --- */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-box img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--primary-glow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: #fff !important;
+            padding: 0.6rem 1.3rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .badge-test {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.4);
+            color: var(--primary-glow);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp-green);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-viber {
+            background: var(--viber-purple);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(115, 96, 242, 0.3);
+        }
+
+        .btn-viber:hover {
+            background: #614de0;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(115, 96, 242, 0.5);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 4rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.8rem;
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary-glow);
+            font-weight: 800;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- FEATURES --- */
+        .section-title {
+            text-align: center;
+            margin: 5rem 0 3rem;
+            padding: 0 1.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(124, 58, 237, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--primary-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- PRICING --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem 1.8rem;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s ease;
+        }
+
+        .price-card.popular {
+            border: 2px solid var(--primary-glow);
+            background: rgba(30, 27, 75, 0.6);
+            transform: scale(1.03);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: #fff;
+            padding: 0.3rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .price-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin: 1rem 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 1.5rem 0 2rem;
+            text-align: left;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-features li i {
+            color: var(--whatsapp-green);
+        }
+
+        /* --- DEVICES --- */
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+
+        .device-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .device-box i {
+            font-size: 2.2rem;
+            color: var(--secondary-accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .device-box h4 {
+            font-size: 1rem;
+        }
+
+        /* --- CTA BANNER --- */
+        .cta-banner {
+            max-width: 1100px;
+            margin: 6rem auto;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(6, 182, 212, 0.2));
+            border: 1px solid var(--primary-glow);
+            border-radius: 24px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            padding: 1.2rem 1.5rem;
+        }
+
+        .faq-item h4 {
+            font-size: 1.05rem;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- FLOATING BUTTONS --- */
+        .floating-contact {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.6rem;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: 0.3s transform ease;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .float-wa { background-color: var(--whatsapp-green); }
+        .float-vb { background-color: var(--viber-purple); }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5rem;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav ul { display: none; }
+            .price-card.popular { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pozadinski svjetlosni efekti -->
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-box">
+                <img src="eldoralogo.PNG" alt="EldoraTV Logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+                <span id="alt-logo" class="logo-text" style="display:none;">Eldora<span>TV</span></span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#pocetna">Početna</a></li>
+                    <li><a href="#prednosti">Prednosti</a></li>
+                    <li><a href="#cjenovnik">Cjenovnik</a></li>
+                    <li><a href="#uredjaji">Uređaji</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="https://wa.me/387603247407?text=Zdravo,%20želim%20besplatan%20IPTV%20test%2024h" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> Besplatan Test</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SEKCIJA -->
+    <section class="hero" id="pocetna">
+        <div class="badge-test">
+            <i class="fa-solid fa-bolt"></i> Besplatan Test Od 24 Sata
+        </div>
+        <h1>Gledajte Omiljene Kanale, Filmove i Serije Bez Prekida</h1>
+        <p>Preko 15.000 TV kanala i 60.000+ VOD filmova i serija u 4K i Full HD kvalitetu. Stabilna usluga prilagođena svim uređajima.</p>
+        
+        <div class="hero-buttons">
+            <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20besplatan%20test%2024h%20za%20EldoraTV" class="btn-main btn-whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Testiraj Putem WhatsApp-a
+            </a>
+            <a href="viber://chat?number=%2B387603247407" class="btn-main btn-viber">
+                <i class="fa-brands fa-viber"></i> Testiraj Putem Viber-a
+            </a>
+        </div>
+    </section>
+
+    <!-- BRZA STATISTIKA -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>15.000+</h3>
+            <p>Uživo TV Kanala</p>
+        </div>
+        <div class="stat-card">
+            <h3>60.000+</h3>
+            <p>Filmova i Serija</p>
+        </div>
+        <div class="stat-card">
+            <h3>4K / FHD</h3>
+            <p>Vrhunska Slika</p>
+        </div>
+        <div class="stat-card">
+            <h3>99.9%</h3>
+            <p>Stabilnost & Uptime</p>
+        </div>
+    </div>
+
+    <!-- PREDNOSTI -->
+    <section class="features" id="prednosti">
+        <div class="section-title">
+            <h2>Zašto Izabrati EldoraTV?</h2>
+            <p>Osiguravamo vrhunsko iskustvo gledanja uz najsavremeniju tehnologiju.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Anti-Freeze Tehnologija</h3>
+                <p>Naši serveri omogućavaju gledanje sportskih događaja i kanala uživo bez seckanja i baferovanja.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-tv"></i></div>
+                <h3>EX-YU & Svjetski Kanali</h3>
+                <p>Svi sportski (Arena, SportKlub), filmski, dokumentarni i dječiji kanali na jednom mjestu.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-film"></i></div>
+                <h3>Bogata VOD Biblioteka</h3>
+                <p>Najnoviji holivudski i domaći filmovi i serije sa prevodom, redovno ažurirani.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>Korisnička Podrška 24/7</h3>
+                <p>Brza pomoć pri podešavanju i instalaciji aplikacija na vaše uređaje u bilo koje doba dana.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PODRŽANI UREĐAJI -->
+    <section id="uredjaji">
+        <div class="section-title">
+            <h2>Gledajte Na Svim Uređajima</h2>
+            <p>EldoraTV je kompatibilna sa svim popularnim platformama.</p>
+        </div>
+
+        <div class="devices-grid">
+            <div class="device-box">
+                <i class="fa-solid fa-tv"></i>
+                <h4>Smart TV</h4>
+            </div>
+            <div class="device-box">
+                <i class="fa-solid fa-box"></i>
+                <h4>Android Box</h4>
+            </div>
+            <div class="device-box">
+                <i class="fa-solid fa-fire"></i>
+                <h4>Firestick</h4>
+            </div>
+            <div class="device-box">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h4>Telefon / Tablet</h4>
+            </div>
+            <div class="device-box">
+                <i class="fa-solid fa-laptop"></i>
+                <h4>MAG / PC</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- CJENOVNIK -->
+    <section id="cjenovnik">
+        <div class="section-title">
+            <h2>Naši Pretplatnički Paketi</h2>
+            <p>Izaberite paket koji vam najviše odgovara. Bez ugovorne obaveze!</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- 1 Mjesec -->
+            <div class="price-card">
+                <div>
+                    <h3>1 Mjesec</h3>
+                    <p>Za probu i kraće periode</p>
+                    <div class="price">10€ <span>/ mj.</span></div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
+                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
+                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
+                        <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%201%20mjesec" class="btn-main btn-whatsapp">Naruči Odmah</a>
+            </div>
+
+            <!-- 3 Mjeseca -->
+            <div class="price-card">
+                <div>
+                    <h3>3 Mjeseca</h3>
+                    <p>Uštedite uz tromjesečni paket</p>
+                    <div class="price">25€ <span>/ 3 mj.</span></div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
+                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
+                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
+                        <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%203%20mjeseca" class="btn-main btn-whatsapp">Naruči Odmah</a>
+            </div>
+
+            <!-- 6 Mjeseci -->
+            <div class="price-card">
+                <div>
+                    <h3>6 Mjeseci</h3>
+                    <p>Polugodišnja pretplata</p>
+                    <div class="price">45€ <span>/ 6 mj.</span></div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
+                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
+                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
+                        <li><i class="fa-solid fa-check"></i> Podrška 24/7</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%206%20mjeseci" class="btn-main btn-whatsapp">Naruči Odmah</a>
+            </div>
+
+            <!-- 12 Mjeseci (Najpopularnije) -->
+            <div class="price-card popular">
+                <div class="popular-badge">Najpopularnije</div>
+                <div>
+                    <h3>12 Mjeseci</h3>
+                    <p>Maksimalna ušteda za cijelu godinu</p>
+                    <div class="price">75€ <span>/ 12 mj.</span></div>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Preko 15.000 TV kanala</li>
+                        <li><i class="fa-solid fa-check"></i> VOD Filmovi & Serije</li>
+                        <li><i class="fa-solid fa-check"></i> SD, HD, FHD & 4K Kvalitet</li>
+                        <li><i class="fa-solid fa-check"></i> EPG TV Vodič</li>
+                        <li><i class="fa-solid fa-check"></i> Prioritetna Podrška 24/7</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/387603247407?text=Zdravo,%20želim%20naručiti%20EldoraTV%20paket%2012%20mjeseci" class="btn-main btn-whatsapp">Naruči Odmah</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANER ZA TEST -->
+    <div class="cta-banner">
+        <h2>Želite li prvo besplatno testirati uslugu?</h2>
+        <p>Javite nam se na WhatsApp ili Viber i poslaćemo vam testnu listu na 24h u roku od nekoliko minuta!</p>
+        <div class="hero-buttons" style="margin-top: 1.5rem;">
+            <a href="https://wa.me/387603247407?text=Zdravo,%20treba%20mi%20besplatan%20test%2024h" class="btn-main btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Test</a>
+            <a href="viber://chat?number=%2B387603247407" class="btn-main btn-viber"><i class="fa-brands fa-viber"></i> Viber Test</a>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="section-title">
+            <h2>Često Postavljana Pitanja</h2>
+            <p>Odgovori na najčešće nedoumice naših korisnika.</p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <h4>Kako da pokrenem besplatni test?</h4>
+                <p>Dovoljno je da kliknete na WhatsApp ili Viber dugme i pošaljete nam poruku. Poslaćemo vam pristupne podatke i uputstvo u roku od par minuta.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Koja je brzina interneta potrebna?</h4>
+                <p>Za stabilan rad u HD rezoluciji preporučuje se internet brzina od najmanje 10 Mbps, a za 4K sadržaj najmanje 25 Mbps.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Na kojim aplikacijama radi vaša usluga?</h4>
+                <p>Podržavamo sve popularne aplikacije: NetTV Plus, Tivimate, Smart IPTV, IPTV Smarters Pro, GSE Smart IPTV, SS IPTV, Duplex Play i mnoge druge.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLUTAJUĆI CONTACT GUMBI -->
+    <div class="floating-contact">
+        <a href="https://wa.me/387603247407?text=Zdravo,%20zanima%20me%20EldoraTV" class="float-btn float-wa" target="_blank" title="Kontaktirajte nas na WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="viber://chat?number=%2B387603247407" class="float-btn float-vb" title="Kontaktirajte nas na Viber">
+            <i class="fa-brands fa-viber"></i>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 EldoraTV. Sva prava zadržana. Tel/WhatsApp/Viber: 060 324 7407 (+387 60 324 7407)</p>
+    </footer>
+
+</body>
+</html>
